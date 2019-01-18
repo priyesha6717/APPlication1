@@ -1,5 +1,6 @@
 package com.example.rajni.application1;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -53,10 +54,12 @@ public class Main2Activity extends Activity {
         });
                 t2 = (TextView)customView.findViewById(R.id.d1);
                 t2.setOnClickListener(new View.OnClickListener() {
+                    @SuppressLint("ResourceAsColor")
                     @Override
                     public void onClick(View view) {
                         Intent i = new Intent(Main2Activity.this,login.class);
                         startActivity(i);
+
                     }
                 });
                 t3 = (TextView)customView.findViewById(R.id.sa);
@@ -75,6 +78,8 @@ public class Main2Activity extends Activity {
                         startActivity(i);
                     }
                 });
+
+
                 p.showAtLocation(l, Gravity.CENTER,0,0);
 
 
