@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/e1"
+        android:title="Employee"></item>
+    <item android:id="@+id/d1"
+        android:title="Doctor"></item>
+
+    <item android:id="@+id/s1"
+        android:title="Safety Officer"></item>
+    <item android:id="@+id/a1"
+        android:title="Admin"></item>
+
+
+</menu>
