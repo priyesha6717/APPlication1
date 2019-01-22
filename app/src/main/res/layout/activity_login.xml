@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/logo6"
+    android:background="@drawable/main1"
     android:paddingBottom="15dp"
     android:paddingLeft="25dp"
     android:paddingRight="5dp"
@@ -58,16 +58,15 @@
         android:layout_gravity="end"
         android:layout_marginBottom="254dp"
         android:layout_marginEnd="30dp"
-        android:autoLink="all"
         android:gravity="end"
-        android:linksClickable="true"
-        android:text="@string/forget"
+        android:text="Forget password?"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textColorLink="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
-        android:paddingTop="13dp"/>
+        android:paddingTop="13dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        />
 
     <Button
         android:id="@+id/login"
@@ -119,7 +118,8 @@
         android:text="@string/string"
         android:textColor="#000000"
         android:textColorLink="#000000"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:selectAllOnFocus="true"/>
 
 
 </RelativeLayout>
