@@ -30,7 +30,8 @@
         <activity android:name=".login" />
         <activity android:name=".Popup" />
         <activity android:name=".registration" />
-        <activity android:name=".profile"></activity>
+        <activity android:name=".profile" />
+        <activity android:name=".registration2"></activity>
     </application>
 
 </manifest>

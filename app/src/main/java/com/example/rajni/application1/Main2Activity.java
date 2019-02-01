@@ -47,7 +47,7 @@ public class Main2Activity extends Activity {
         l1.setAdapter(adapter);
         adapter.notifyDataSetChanged();
         builder.setView(row);
-        AlertDialog dialog=builder.create();
+        final AlertDialog dialog=builder.create();
         dialog.show();
         l1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -55,6 +55,7 @@ public class Main2Activity extends Activity {
                 String selecteditem = (String)adapterView.getItemAtPosition(i);
                 Intent intent = new Intent(Main2Activity.this,login.class);
                 startActivity(intent);
+                dialog.cancel();
             }
         });
     }

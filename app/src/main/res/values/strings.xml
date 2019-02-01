@@ -2,4 +2,9 @@
     <string name="app_name">APPlication 1</string>
     <string name="string"><u>Create your account</u></string>
     <string name="s"><u>Login now</u></string>
+    <string name="gender"><u>Gender</u></string>
+    <string-array name="gender">
+        <item><u>Male</u></item>
+        <item><u>Female</u></item>
+    </string-array>
 </resources>
