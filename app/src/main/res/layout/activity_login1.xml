@@ -9,11 +9,11 @@
     android:paddingLeft="25dp"
     android:paddingRight="5dp"
     android:paddingTop="15dp"
-    tools:context=".login"
-    android:id="@+id/r2">
+    tools:context=".login1"
+    android:id="@+id/r21">
 
     <EditText
-        android:id="@+id/uid"
+        android:id="@+id/uid1"
         android:layout_width="330dp"
         android:layout_height="46dp"
         android:layout_alignParentBottom="true"
@@ -31,7 +31,7 @@
         android:textSize="17dp" />
 
     <EditText
-        android:id="@+id/pwd"
+        android:id="@+id/pwd1"
         android:layout_width="330dp"
         android:layout_height="46dp"
         android:layout_alignParentBottom="true"
@@ -51,7 +51,7 @@
         />
 
     <TextView
-        android:id="@+id/fpwd"
+        android:id="@+id/fpwd1"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:layout_alignParentBottom="true"
@@ -70,7 +70,7 @@
         />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/login1"
         android:layout_width="330dp"
         android:layout_height="46dp"
         android:layout_alignParentBottom="true"
@@ -86,7 +86,7 @@
         android:textSize="16dp" />
 
     <CheckBox
-        android:id="@+id/rm"
+        android:id="@+id/rm1"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:layout_alignParentBottom="true"
@@ -97,7 +97,7 @@
         android:textColor="@color/colorAccent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:layout_alignParentBottom="true"
@@ -108,19 +108,19 @@
         android:textColor="@color/colorAccent" />
 
     <TextView
-        android:id="@+id/reg"
+        android:id="@+id/reg1"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/textView"
-        android:layout_marginEnd="81dp"
+        android:layout_alignTop="@+id/textView1"
+        android:layout_marginEnd="85dp"
         android:autoLink="all"
         android:linksClickable="true"
+        android:selectAllOnFocus="true"
         android:text="@string/string"
         android:textColor="#000000"
         android:textColorLink="#000000"
-        android:textStyle="bold"
-        android:selectAllOnFocus="true"/>
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

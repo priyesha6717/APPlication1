@@ -50,9 +50,12 @@
         android:textAllCaps="false"
         android:textColor="@color/colorAccent"
         android:textSize="17dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:id="@+id/location"
+        />
 
     <TextView
+        android:id="@+id/aboutus"
         android:layout_width="350dp"
         android:layout_height="46dp"
         android:layout_alignParentBottom="true"
@@ -73,6 +76,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/contactus"
         android:layout_width="350dp"
         android:layout_height="46dp"
         android:layout_alignParentBottom="true"

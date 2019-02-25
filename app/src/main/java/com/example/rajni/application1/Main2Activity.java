@@ -29,6 +29,7 @@ import android.widget.Toast;
 public class Main2Activity extends Activity {
     String[] names = {"Employee","Doctor","Safety Officer","Admin"};
     ArrayAdapter<String> adapter;
+    TextView location,AboutUs;
 
 
 
@@ -36,6 +37,14 @@ public class Main2Activity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        location=(TextView)findViewById(R.id.location) ;
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Main2Activity.this,MapsActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
     public  void open(View v)
@@ -43,6 +52,7 @@ public class Main2Activity extends Activity {
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
         View row=getLayoutInflater().inflate(R.layout.activity_popup,null);
         ListView l1=(ListView)row.findViewById(R.id.listview);
+
         adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,names);
         l1.setAdapter(adapter);
         adapter.notifyDataSetChanged();
@@ -52,11 +62,28 @@ public class Main2Activity extends Activity {
         l1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String selecteditem = (String)adapterView.getItemAtPosition(i);
-                Intent intent = new Intent(Main2Activity.this,login.class);
-                startActivity(intent);
+              String selecteditem = (String)adapterView.getItemAtPosition(i);
+//                Intent intent = new Intent(Main2Activity.this,login.class);
+//                startActivity(intent);
+                if(i == 0) {
+                    Intent intent = new Intent(Main2Activity.this, login.class);
+                    startActivity(intent);
+                }
+                if(i == 1) {
+                    Intent intent = new Intent(Main2Activity.this, login1.class);
+                    startActivity(intent);
+                }
+                if(i == 2) {
+                    Intent intent = new Intent(Main2Activity.this, login2.class);
+                    startActivity(intent);
+                }
+                if(i == 3) {
+                    Intent intent = new Intent(Main2Activity.this, login3.class);
+                    startActivity(intent);
+                }
                 dialog.cancel();
             }
         });
+
     }
 }

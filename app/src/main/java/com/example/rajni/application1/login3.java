@@ -2,7 +2,6 @@ package com.example.rajni.application1;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -18,13 +17,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-
-public class login extends AppCompatActivity implements TextWatcher,CompoundButton.OnCheckedChangeListener {
+public class login3 extends AppCompatActivity implements TextWatcher,CompoundButton.OnCheckedChangeListener {
     EditText uid,pwd;
     Button login;
     TextView reg,fpwd;
@@ -34,51 +27,45 @@ public class login extends AppCompatActivity implements TextWatcher,CompoundButt
     private static final String PREF_Name="prefsfile";
     SharedPreferences.Editor editor;
 
-    String URL= "http://192.168.0.104/Android/index1.php";
 
-    JSONParser jsonParser=new JSONParser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        uid = (EditText)findViewById(R.id.uid);
-        pwd = (EditText)findViewById(R.id.pwd);
-        cb = (CheckBox)findViewById(R.id.rm);
+        setContentView(R.layout.activity_login3);
+        uid = (EditText)findViewById(R.id.uid3);
+        pwd = (EditText)findViewById(R.id.pwd3);
+        cb = (CheckBox)findViewById(R.id.rm3);
         mpref = getSharedPreferences(PREF_Name,MODE_PRIVATE);
-         editor=mpref.edit();
+        editor=mpref.edit();
         if(mpref.getBoolean("pref_check",false))
             cb.setChecked(true);
         else
             cb.setChecked(false);
-       uid.setText(mpref.getString("pref_name",""));
+        uid.setText(mpref.getString("pref_name",""));
         pwd.setText(mpref.getString("pref_pwd",""));
         uid.addTextChangedListener( this);
         pwd.addTextChangedListener(this);
         cb.setOnCheckedChangeListener( this);
 
-        login = (Button)findViewById(R.id.login);
-        reg = (TextView)findViewById(R.id.reg);
-        fpwd = (TextView)findViewById(R.id.fpwd);
+        login = (Button)findViewById(R.id.login3);
+        reg = (TextView)findViewById(R.id.reg3);
+        fpwd = (TextView)findViewById(R.id.fpwd3);
 
 
-        text=Html.fromHtml("<a href='https://www.google.co.in//'>Forget your password?</a>");
+        text= Html.fromHtml("<a href='https://www.google.co.in//'>Forget your password?</a>");
         fpwd.setMovementMethod(LinkMovementMethod.getInstance());
         fpwd.setText(text);
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(login.this,registration_emp1.class);
-                startActivity(i);
+                Intent i3 = new Intent(login3.this,registration_admin.class);
+                startActivity(i3);
             }
         });
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                AttemptLogin attemptLogin= new AttemptLogin();
-                attemptLogin.execute(uid.getText().toString(),pwd.getText().toString(),"");
-
                 if(uid.getText().toString().trim().length()==0){
                     uid.setError("Enter your userID");
                     uid.requestFocus();
@@ -88,13 +75,12 @@ public class login extends AppCompatActivity implements TextWatcher,CompoundButt
                     pwd.requestFocus();
                 }
                 else{
-                    Intent intent=new Intent(login.this,profile_emp.class);
-                    startActivity(intent);
+                    Intent intent3=new Intent(login3.this,profile_admin1.class);
+                    startActivity(intent3);
                 }
             }
         });
     }
-
 
     @Override
     public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -103,7 +89,7 @@ public class login extends AppCompatActivity implements TextWatcher,CompoundButt
 
     @Override
     public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-    abc();
+        abc();;
     }
 
     @Override
@@ -113,7 +99,7 @@ public class login extends AppCompatActivity implements TextWatcher,CompoundButt
 
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-    abc();
+        abc();
     }
     private void abc(){
         if(cb.isChecked()){
@@ -131,52 +117,4 @@ public class login extends AppCompatActivity implements TextWatcher,CompoundButt
 
         }
     }
-    private class AttemptLogin extends AsyncTask<String, String, JSONObject> {
-
-        @Override
-
-        protected void onPreExecute() {
-
-            super.onPreExecute();
-
-        }
-
-        @Override
-
-        protected JSONObject doInBackground(String... args) {
-
-            String password = args[1];
-            String name= args[0];
-
-            ArrayList params = new ArrayList();
-            params.add(new BasicNameValuePair("EmployeeID", name));
-            params.add(new BasicNameValuePair("Password", password));
-
-            JSONObject json = jsonParser.makeHttpRequest(URL, "POST", params);
-
-
-            return json;
-
-        }
-
-        protected void onPostExecute(JSONObject result) {
-
-            // dismiss the dialog once product deleted
-            //Toast.makeText(getApplicationContext(),result,Toast.LENGTH_LONG).show();
-
-            try {
-                if (result != null) {
-                    Toast.makeText(getApplicationContext(),result.getString("message"),Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Unable to retrieve any data from server", Toast.LENGTH_LONG).show();
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-
-        }
-
-    }
 }
-
