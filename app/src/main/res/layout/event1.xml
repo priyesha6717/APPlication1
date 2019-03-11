@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:layout_marginTop="30dp"
+        android:text="My Appointments"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:background="@drawable/img11">
+
+        <TextView
+            android:id="@+id/v2"
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/t12"
+            android:drawableLeft="@drawable/detail"
+            android:fontFamily="sans-serif-light"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Appointment Details"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/v3"
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/t12"
+            android:drawableLeft="@drawable/date"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/v5"
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/t12"
+            android:drawableLeft="@drawable/time"
+            android:fontFamily="sans-serif-light"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/v4"
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/t12"
+            android:drawableLeft="@drawable/place"
+            android:fontFamily="sans-serif-light"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/v7"
+            android:layout_width="270dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/t12"
+            android:drawableLeft="@drawable/note"
+            android:fontFamily="sans-serif-light"
+            android:paddingLeft="10dp"
+            android:paddingTop="9dp"
+            android:paddingBottom="5dp"
+            android:text="  Note : Kindly visit the center at given date and time "
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/round"
+            android:fontFamily="sans-serif-light"
+            android:text="Date"
+            android:visibility="gone"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/apt"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/round"
+            android:text="Take Appointment"
+            android:fontFamily="sans-serif-light"
+            android:visibility="visible"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/change11"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round"
+            android:fontFamily="sans-serif-light"
+            android:text="Change"
+            android:visibility="gone"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/b2"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:layout_margin="10dp"
+            android:layout_toEndOf="@+id/button"
+            android:background="@drawable/round"
+            android:fontFamily="sans-serif-light"
+            android:text="Time"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/cancle11"
+            android:layout_below="@+id/change11"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/round"
+            android:visibility="gone"
+            android:fontFamily="sans-serif-light"
+            android:text="Cancle"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

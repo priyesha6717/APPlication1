@@ -25,50 +25,50 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class login extends AppCompatActivity implements TextWatcher,CompoundButton.OnCheckedChangeListener {
-    EditText uid,pwd;
+    EditText EmployeeID, Password;
     Button login;
-    TextView reg,fpwd;
+    TextView reg, fpwd;
     Spanned text;
     CheckBox cb;
     private SharedPreferences mpref;
-    private static final String PREF_Name="prefsfile";
+    private static final String PREF_Name = "prefsfile";
     SharedPreferences.Editor editor;
 
-    String URL= "http://192.168.0.104/Android/index1.php";
+    String URL = "http://192.168.43.184/Android/index1.php";
 
-    JSONParser jsonParser=new JSONParser();
+    JSONParser jsonParser = new JSONParser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        uid = (EditText)findViewById(R.id.uid);
-        pwd = (EditText)findViewById(R.id.pwd);
-        cb = (CheckBox)findViewById(R.id.rm);
-        mpref = getSharedPreferences(PREF_Name,MODE_PRIVATE);
-         editor=mpref.edit();
-        if(mpref.getBoolean("pref_check",false))
+        EmployeeID = (EditText) findViewById(R.id.uid);
+        Password = (EditText) findViewById(R.id.pwd);
+        cb = (CheckBox) findViewById(R.id.rm);
+        mpref = getSharedPreferences(PREF_Name, MODE_PRIVATE);
+        editor = mpref.edit();
+        if (mpref.getBoolean("pref_check", false))
             cb.setChecked(true);
         else
             cb.setChecked(false);
-       uid.setText(mpref.getString("pref_name",""));
-        pwd.setText(mpref.getString("pref_pwd",""));
-        uid.addTextChangedListener( this);
-        pwd.addTextChangedListener(this);
-        cb.setOnCheckedChangeListener( this);
+        EmployeeID.setText(mpref.getString("pref_name", ""));
+        Password.setText(mpref.getString("pref_pwd", ""));
+        EmployeeID.addTextChangedListener(this);
+        Password.addTextChangedListener(this);
+        cb.setOnCheckedChangeListener(this);
 
-        login = (Button)findViewById(R.id.login);
-        reg = (TextView)findViewById(R.id.reg);
-        fpwd = (TextView)findViewById(R.id.fpwd);
+        login = (Button) findViewById(R.id.login);
+        reg = (TextView) findViewById(R.id.register);
+        fpwd = (TextView) findViewById(R.id.fpwd);
 
 
-        text=Html.fromHtml("<a href='https://www.google.co.in//'>Forget your password?</a>");
+        text = Html.fromHtml("<a href='https://www.google.co.in//'>Forget your password?</a>");
         fpwd.setMovementMethod(LinkMovementMethod.getInstance());
         fpwd.setText(text);
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(login.this,registration_emp1.class);
+                Intent i = new Intent(login.this, registration_employee.class);
                 startActivity(i);
             }
         });
@@ -76,62 +76,24 @@ public class login extends AppCompatActivity implements TextWatcher,CompoundButt
             @Override
             public void onClick(View view) {
 
-                AttemptLogin attemptLogin= new AttemptLogin();
-                attemptLogin.execute(uid.getText().toString(),pwd.getText().toString(),"");
+//
+                if (EmployeeID.getText().toString().trim().length() == 0) {
+                    EmployeeID.setError("Enter your userID");
+                    EmployeeID.requestFocus();
+                }
+                if (Password.getText().toString().trim().length() == 0) {
+                    Password.setError("Enter your password");
+                    Password.requestFocus();
+                } else {
+                    AttemptLogin attemptLogin = new AttemptLogin();
+                    attemptLogin.execute(EmployeeID.getText().toString(), Password.getText().toString(), "");
+//                    userLogin();
 
-                if(uid.getText().toString().trim().length()==0){
-                    uid.setError("Enter your userID");
-                    uid.requestFocus();
-                }
-                if(pwd.getText().toString().trim().length()==0){
-                    pwd.setError("Enter your password");
-                    pwd.requestFocus();
-                }
-                else{
-                    Intent intent=new Intent(login.this,profile_emp.class);
-                    startActivity(intent);
                 }
             }
         });
     }
-
-
-    @Override
-    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-    }
-
-    @Override
-    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-    abc();
-    }
-
-    @Override
-    public void afterTextChanged(Editable editable) {
-
-    }
-
-    @Override
-    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-    abc();
-    }
-    private void abc(){
-        if(cb.isChecked()){
-            editor.putString("pref_name",uid.getText().toString().trim());
-            editor.putString("pref_pwd",pwd.getText().toString().trim());
-            editor.putBoolean("pref_check",true);
-            editor.apply();
-//            Toast.makeText(getApplicationContext(),"Setting have been saved",Toast.LENGTH_SHORT).show();
-
-        }else{
-            editor.remove("pref_name");
-            editor.remove("pref_pwd");
-            editor.putBoolean("pref_check",false);
-            editor.apply();
-
-        }
-    }
-    private class AttemptLogin extends AsyncTask<String, String, JSONObject> {
+        private class AttemptLogin extends AsyncTask<String, String, JSONObject> {
 
         @Override
 
@@ -145,12 +107,12 @@ public class login extends AppCompatActivity implements TextWatcher,CompoundButt
 
         protected JSONObject doInBackground(String... args) {
 
-            String password = args[1];
-            String name= args[0];
+            String Password = args[1];
+            String EmployeeID = args[0];
 
             ArrayList params = new ArrayList();
-            params.add(new BasicNameValuePair("EmployeeID", name));
-            params.add(new BasicNameValuePair("Password", password));
+            params.add(new BasicNameValuePair("EmployeeID", EmployeeID));
+            params.add(new BasicNameValuePair("Password", Password));
 
             JSONObject json = jsonParser.makeHttpRequest(URL, "POST", params);
 
@@ -167,16 +129,77 @@ public class login extends AppCompatActivity implements TextWatcher,CompoundButt
             try {
                 if (result != null) {
                     Toast.makeText(getApplicationContext(),result.getString("message"),Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Unable to retrieve any data from server", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(login.this, profile_emp.class);
+                    startActivity(intent);
+
+
                 }
+                else{
+                        Toast.makeText(getApplicationContext(), "Unable to retrieve any data from server", Toast.LENGTH_LONG).show();
+                    }
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
 
         }
+    }
+
+
+
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
     }
+
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        abc();
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
+
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        abc();
+    }
+
+    private void abc() {
+        if (cb.isChecked()) {
+            editor.putString("pref_name", EmployeeID.getText().toString().trim());
+            editor.putString("pref_pwd", Password.getText().toString().trim());
+            editor.putBoolean("pref_check", true);
+            editor.apply();
+//            Toast.makeText(getApplicationContext(),"Setting have been saved",Toast.LENGTH_SHORT).show();
+
+        } else {
+            editor.remove("pref_name");
+            editor.remove("pref_pwd");
+            editor.putBoolean("pref_check", false);
+            editor.apply();
+
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

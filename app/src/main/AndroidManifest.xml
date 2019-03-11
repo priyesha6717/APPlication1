@@ -42,19 +42,11 @@
 
         <activity android:name=".login" />
         <activity android:name=".Popup" />
-        <activity android:name=".registration_emp1" />
         <activity android:name=".profile_emp" />
-        <activity android:name=".registration_emp2" />
         <activity android:name=".login1" />
         <activity android:name=".login2" />
         <activity android:name=".login3" />
-        <activity android:name=".registration_doctor" />
-        <activity android:name=".registration_doctor2" />
         <activity android:name=".profile_doctor" />
-        <activity android:name=".registration_safetyofficer" />
-        <activity android:name=".registration_safetyofficer2" />
-        <activity android:name=".registration_admin" />
-        <activity android:name=".registration_admin_2" />
         <activity android:name=".profile_safetyofficer" />
         <activity android:name=".profile_admin1" />
         <!--
@@ -72,6 +64,10 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
+        <activity android:name=".registration_employee" />
+        <activity android:name=".registration_doctor" />
+        <activity android:name=".registration_safetyofficer" />
+        <activity android:name=".registration_admin"></activity>
     </application>
 
 </manifest>

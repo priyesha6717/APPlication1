@@ -108,7 +108,7 @@
         android:textColor="@color/colorAccent" />
 
     <TextView
-        android:id="@+id/reg"
+        android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:layout_alignParentEnd="true"
