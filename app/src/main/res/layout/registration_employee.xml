@@ -218,10 +218,11 @@
         <TextView
             android:id="@+id/Loginnow"
             android:layout_toEndOf="@+id/abc"
+            android:textAlignment="viewStart"
             android:layout_width="wrap_content"
             android:layout_height="46dp"
             android:layout_alignParentEnd="true"
-            android:textAlignment="viewStart"
+
             android:layout_marginTop="870dp"
             android:autoLink="all"
             android:linksClickable="true"

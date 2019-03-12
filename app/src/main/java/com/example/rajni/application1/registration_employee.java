@@ -25,8 +25,8 @@ public class registration_employee extends AppCompatActivity {
     TextView lg;
     private static final String tag = "dob";
     private EditText Birthdate, Firstname, Middlename, Lastname;
-    EditText Gender;
     EditText EmployeeID, ContactNo, EmailID, Password, ConfirmPassword;
+    EditText Gender;
     Button submit, cancle2;
     String emailpattern = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
     String pwdpattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{6,20}$";

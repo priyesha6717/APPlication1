@@ -105,14 +105,16 @@
         android:layout_marginBottom="100dp"
         android:layout_marginStart="50dp"
         android:text="Not a member yet?"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:textAlignment="textEnd"/>
 
     <TextView
         android:id="@+id/reg2"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:layout_alignTop="@+id/textView2"
-        android:layout_toEndOf="@+id/rm2"
+        android:layout_toEndOf="@+id/textView2"
+        android:textAlignment="viewStart"
         android:autoLink="all"
         android:linksClickable="true"
         android:selectAllOnFocus="true"

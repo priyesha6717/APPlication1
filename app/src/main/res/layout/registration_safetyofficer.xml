@@ -211,16 +211,18 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="870dp"
             android:text="Already registred?"
-            android:textColor="@color/colorAccent" />
+            android:textColor="@color/colorAccent"
+            android:id="@+id/abc2"
+            android:textAlignment="textEnd"/>
 
         <TextView
             android:id="@+id/Loginnow2"
             android:layout_width="wrap_content"
             android:layout_height="46dp"
+            android:textAlignment="viewStart"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="58dp"
-            android:layout_marginStart="12dp"
             android:layout_marginTop="870dp"
+            android:layout_toEndOf="@+id/abc2"
             android:autoLink="all"
             android:linksClickable="true"
             android:text="@string/s"

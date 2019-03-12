@@ -1,13 +1,293 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
 
-    android:id="@+id/r5">
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hello"/>
-</RelativeLayout>
+        android:id="@+id/abc1"
+        app:layout_goneMarginTop="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="20dp"
+        android:text="My Profile"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="619dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="6dp"
+                android:src="@drawable/empid" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/t11"
+                android:fontFamily="sans-serif-light"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:text="Ria Patel"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="6dp"
+                android:src="@drawable/email1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/t11"
+                android:fontFamily="sans-serif-light"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:text="riapatel@gmail.com"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="6dp"
+                android:src="@drawable/emoid1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/t11"
+                android:fontFamily="sans-serif-light"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:text="151130116072"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="6dp"
+                android:src="@drawable/phone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/t11"
+                android:fontFamily="sans-serif-light"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:text="9104772696"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="6dp"
+                android:src="@drawable/setings1" />
+
+            <TextView
+                android:id="@+id/set"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/t11"
+                android:drawableEnd="@drawable/next"
+                android:fontFamily="sans-serif-light"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:text="Settings"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="6dp"
+                android:src="@drawable/about" />
+
+            <TextView
+                android:id="@+id/abus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/t11"
+                android:drawableEnd="@drawable/next"
+                android:fontFamily="sans-serif-light"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:text="About Us"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="6dp"
+                android:src="@drawable/cantctus" />
+
+            <TextView
+                android:id="@+id/contact"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/t11"
+                android:drawableEnd="@drawable/next"
+                android:fontFamily="sans-serif-light"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:text="Contact Us"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="6dp"
+                android:src="@drawable/logout" />
+
+            <TextView
+                android:id="@+id/logout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/t11"
+                android:drawableEnd="@drawable/next"
+                android:fontFamily="sans-serif-light"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:text="Log Out"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

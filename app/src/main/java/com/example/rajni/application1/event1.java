@@ -47,21 +47,7 @@ public class event1 extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        mpref = this.getActivity().getSharedPreferences(PREF_Name, Context.MODE_PRIVATE);
-//        editor=mpref.edit();
-//
-//        v2.setText(mpref.getString("pref_title",""));
-//        v3.setText(mpref.getString("pref_date",""));
-//        v4.setText(mpref.getString("pref_venu",""));
-//        v5.setText(mpref.getString("pref_time",""));
-//        v7.setText(mpref.getString("pref_note",""));
-//
-//        editor.putString("pref_title",v2.getText().toString().trim());
-//        editor.putString("pref_date",v3.getText().toString().trim());
-//        editor.putString("pref_venu",v4.getText().toString().trim());
-//        editor.putString("pref_time",v5.getText().toString().trim());
-//        editor.putString("pref_note",v7.getText().toString().trim());
-//        editor.apply();
+
 
         v2 = (TextView) getView().findViewById(R.id.v2);
         v7 = (TextView) getView().findViewById(R.id.v7);
@@ -205,3 +191,18 @@ public class event1 extends Fragment {
         b2.setVisibility(View.VISIBLE);
     }
 }
+//        mpref = this.getActivity().getSharedPreferences(PREF_Name, Context.MODE_PRIVATE);
+//        editor=mpref.edit();
+//
+//        v2.setText(mpref.getString("pref_title",""));
+//        v3.setText(mpref.getString("pref_date",""));
+//        v4.setText(mpref.getString("pref_venu",""));
+//        v5.setText(mpref.getString("pref_time",""));
+//        v7.setText(mpref.getString("pref_note",""));
+//
+//        editor.putString("pref_title",v2.getText().toString().trim());
+//        editor.putString("pref_date",v3.getText().toString().trim());
+//        editor.putString("pref_venu",v4.getText().toString().trim());
+//        editor.putString("pref_time",v5.getText().toString().trim());
+//        editor.putString("pref_note",v7.getText().toString().trim());
+//        editor.apply();

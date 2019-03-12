@@ -14,7 +14,7 @@ public class profile_admin1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_admin1);
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation_admin);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        loadFragment(new home4());
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -37,9 +37,17 @@ public class profile_admin1 extends AppCompatActivity {
                         SF = new profile4();
                         break;
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.frame4,SF).commit();
-                return true;
+
+                return loadFragment(SF);
             }
         });
+    }
+    private boolean loadFragment(Fragment fragment)
+    {
+        if(fragment!=null){
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame4,fragment).commit();
+            return true;
+        }
+        return false;
     }
 }

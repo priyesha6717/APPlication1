@@ -127,13 +127,9 @@ public class login3 extends AppCompatActivity implements TextWatcher,CompoundBut
 
             try {
                 if (result != null) {
-                    if (result.getString("message").equals("Successfully logged in")) {
-                        Intent intent = new Intent(login3.this, profile_admin1.class);
-                        startActivity(intent);
-                        finish();
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Invalid credentials", Toast.LENGTH_LONG).show();
-                    }
+                    Toast.makeText(getApplicationContext(),result.getString("message"),Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(login3.this, profile_admin1.class);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Unable to retrieve any data from server", Toast.LENGTH_LONG).show();

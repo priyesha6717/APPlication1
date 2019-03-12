@@ -14,7 +14,7 @@ public class profile_safetyofficer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_safetyofficer);
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation_so);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        loadFragment(new home3());
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -37,9 +37,16 @@ public class profile_safetyofficer extends AppCompatActivity {
                         SF = new profile3();
                         break;
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.frame3,SF).commit();
-                return true;
+                return loadFragment(SF);
             }
         });
+    }
+    private boolean loadFragment(Fragment fragment)
+    {
+        if(fragment!=null){
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame3,fragment).commit();
+            return true;
+        }
+        return false;
     }
 }

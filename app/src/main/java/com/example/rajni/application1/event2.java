@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 public class event2 extends Fragment {
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanseState){
         return inflater.inflate(R.layout.event2,container,false);

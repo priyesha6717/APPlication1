@@ -16,6 +16,7 @@ public class profile_emp extends AppCompatActivity {
         setContentView(R.layout.activity_profile_emp);
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation_emp);
         bottomNavigationView.setSelectedItemId(R.id.home);
+        loadFragment(new home1());
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -38,9 +39,17 @@ public class profile_emp extends AppCompatActivity {
                         SF = new profile1();
                         break;
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.frame1,SF).commit();
-                return true;
+
+                return loadFragment(SF);
             }
         });
+    }
+    private boolean loadFragment(Fragment fragment)
+    {
+        if(fragment!=null){
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame1,fragment).commit();
+            return true;
+        }
+        return false;
     }
 }
