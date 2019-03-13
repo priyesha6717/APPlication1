@@ -15,12 +15,21 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class registration_admin extends AppCompatActivity {
     TextView lg;
@@ -32,8 +41,18 @@ public class registration_admin extends AppCompatActivity {
     String emailpattern = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
     String pwdpattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{6,20}$";
     String contactpattern = "^(?=.*[0-9]).{9,11}";
+    RequestQueue requestQueue;
+    String Firstname1;
+    String Middlename1;
+    String Lastname1;
+    String Birtdate1;
+    String Gender1;
+    String EmployeeID1;
+    String EmailID1 ;
+    String ContactNo1;
+    String Password1;
     private DatePickerDialog.OnDateSetListener onDateSetListener;
-    String URL = "http://192.168.43.184/Android/index1.php";
+    String URL = "http://192.168.43.184/Android/setData1.php";
     JSONParser jsonParser=new JSONParser();
 
 
@@ -53,11 +72,7 @@ public class registration_admin extends AppCompatActivity {
         ConfirmPassword = (EditText) findViewById(R.id.ConfirmPassword3);
         cancle2 = (Button) findViewById(R.id.Cancle3);
         lg = (TextView) findViewById(R.id.Loginnow3);
-//        if (SharedPrefManager.getInstance(this).isLoggedIn()) {
-//            finish();
-//            startActivity(new Intent(this, profile_emp.class));
-//            return;
-//        }
+        requestQueue = Volley.newRequestQueue(registration_admin.this);
         lg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,104 +121,77 @@ public class registration_admin extends AppCompatActivity {
         findViewById(R.id.sub3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //if user pressed on button register
-                //here we will register the user to server
-//                registerUser();
+                GetValueFromEditText();
+                // Creating string request with post method.
+                StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                        URL,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String ServerResponse) {
+                                // Hiding the progress dialog after all task complete.
 
-                if (Firstname.getText().toString().trim().length() == 0) {
-                    Firstname.setError("Enter your First Name");
-                    Firstname.requestFocus();
-                } else if (Middlename.getText().toString().trim().length() == 0) {
-                    Middlename.setError("Enter your Middle Name");
-                    Middlename.requestFocus();
-                } else if (Lastname.getText().toString().trim().length() == 0) {
-                    Lastname.setError("Enter your Last Name");
-                    Lastname.requestFocus();
-                } else if (Birthdate.getText().toString().trim().length() == 0) {
-                    Birthdate.setError("Enter your BirthDate");
-                    Birthdate.requestFocus();
-                } else {
-                    AttemptLogin3 attemptLogin = new AttemptLogin3();
-                    attemptLogin.execute(Firstname.getText().toString(),Middlename.getText().toString(),Lastname.getText().toString(),Birthdate.getText().toString(),Gender.getText().toString(),
-                            EmployeeID.getText().toString(),EmailID.getText().toString(),ContactNo.getText().toString(),Password.getText().toString());
-//                    Intent intent = new Intent(registration_admin.this, profile_emp.class);
-//                    startActivity(intent);
-                }
+                                // Showing response message coming from server.
+                                Toast.makeText(registration_admin.this, ServerResponse,
+                                        Toast.LENGTH_LONG).show();
+                                Intent i = new Intent(registration_admin.this, profile_admin1.class);
+                                startActivity(i);
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError volleyError) {
+                                // Hiding the progress dialog after all task complete.
+
+                                // Showing error message if something goes wrong.
+                                Toast.makeText(registration_admin.this,
+                                        volleyError.toString(), Toast.LENGTH_LONG).show();
+                            }
+                        }) {
+                    @Override
+                    protected Map<String, String> getParams() {
+                        // Creating Map String Params.
+                        Map<String, String> params = new HashMap<String, String>();
+                        // Adding All values to Params.
+                        params.put("Firstname", Firstname1);
+                        params.put("Middlename", Middlename1);
+                        params.put("Lastname", Lastname1);
+                        params.put("Birthdate", Birtdate1);
+                        params.put("Gender", Gender1);
+                        params.put("EmployeeID", EmployeeID1);
+                        params.put("EmailID", EmailID1);
+                        params.put("ContactNo", ContactNo1);
+                        params.put("Password", Password1);
+                        return params;
+                    }
+                };
+                // Creating RequestQueue.
+                RequestQueue requestQueue =
+                        Volley.newRequestQueue(registration_admin.this);
+                // Adding the StringRequest object into requestQueue.
+                requestQueue.add(stringRequest);
 
             }
+
+
         });
 
 
     }
+    public void GetValueFromEditText(){
 
-
-    private class AttemptLogin3 extends AsyncTask<String, String, JSONObject> {
-
-        @Override
-
-        protected void onPreExecute() {
-
-            super.onPreExecute();
-
-        }
-
-        @Override
-
-        protected JSONObject doInBackground(String... args) {
-
-            String Firstname = args[0];
-            String Middlename = args[1];
-            String Lastname = args[2];
-            String Birtdate = args[3];
-            String Gender = args[4];
-            String EmployeeID = args[5];
-            String EmailID = args[6];
-            String ContactNo = args[7];
-            String Password = args[8];
-            ArrayList params = new ArrayList();
-            params.add(new BasicNameValuePair("Firstname", Firstname));
-            params.add(new BasicNameValuePair("Middlename", Middlename));
-            params.add(new BasicNameValuePair("Lastname",Lastname));
-            params.add(new BasicNameValuePair("Birtdate", Birtdate));
-            params.add(new BasicNameValuePair("Gender", Gender));
-            params.add(new BasicNameValuePair("EmployeeID",EmployeeID));
-            params.add(new BasicNameValuePair("EmailID", EmailID));
-            params.add(new BasicNameValuePair("ContactNo", ContactNo));
-            params.add(new BasicNameValuePair("Password",Password));
-
-
-            JSONObject json = jsonParser.makeHttpRequest(URL, "POST", params);
-
-
-            return json;
-
-        }
-
-        protected void onPostExecute(JSONObject result) {
-
-            // dismiss the dialog once product deleted
-            //Toast.makeText(getApplicationContext(),result,Toast.LENGTH_LONG).show();
-
-            try {
-                if (result != null) {
-                    if (result.getString("message").equals("Successfully registered the user")) {
-                        Intent intent = new Intent(registration_admin.this, profile_emp.class);
-                        startActivity(intent);
-                        finish();
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Invalid credentials", Toast.LENGTH_LONG).show();
-                    }
-                } else {
-                    Toast.makeText(getApplicationContext(), "Unable to retrieve any data from server", Toast.LENGTH_LONG).show();
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-
-        }
+        Firstname1 = Firstname.getText().toString().trim();
+        Middlename1 = Middlename.getText().toString().trim();
+        Lastname1 = Lastname.getText().toString().trim();
+        Birtdate1 = Birthdate.getText().toString().trim();
+        Gender1 = Gender.getText().toString().trim();
+        EmployeeID1 = EmployeeID.getText().toString().trim();
+        EmailID1 = EmailID.getText().toString().trim();
+        ContactNo1 = ContactNo.getText().toString().trim();
+        Password1 = Password.getText().toString().trim();
 
     }
+
+
 
 }
 

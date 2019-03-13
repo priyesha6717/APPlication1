@@ -33,7 +33,7 @@ public class login2 extends AppCompatActivity implements TextWatcher,CompoundBut
     private SharedPreferences mpref;
     private static final String PREF_Name="prefsfile";
     SharedPreferences.Editor editor;
-    String URL = "http://192.168.43.184/Android/index1.php";
+    String URL = "http://192.168.43.184/Android/loginindex1.php";
 
     JSONParser jsonParser = new JSONParser();
 

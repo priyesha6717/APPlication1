@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,15 +8,16 @@
 
     <TextView
         android:id="@+id/abc1"
-        app:layout_goneMarginTop="30dp"
-        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginBottom="20dp"
         android:text="My Profile"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:layout_goneMarginTop="70dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="38dp"
+        tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,7 +51,7 @@
                 android:paddingEnd="5dp"
                 android:paddingStart="20dp"
                 android:paddingTop="5dp"
-                android:text="Ria Patel"
+                android:text="Priyesha Patel"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
@@ -81,7 +83,7 @@
                 android:paddingEnd="5dp"
                 android:paddingStart="20dp"
                 android:paddingTop="5dp"
-                android:text="riapatel@gmail.com"
+                android:text="ppatel@gmail.com"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 

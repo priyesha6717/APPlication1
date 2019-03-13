@@ -67,7 +67,9 @@
         <activity android:name=".registration_employee" />
         <activity android:name=".registration_doctor" />
         <activity android:name=".registration_safetyofficer" />
-        <activity android:name=".registration_admin"></activity>
+        <activity android:name=".registration_admin" />
+        <activity android:name=".Docprof" />
+        <activity android:name=".Main3Activity"></activity>
     </application>
 
 </manifest>

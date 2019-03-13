@@ -32,8 +32,9 @@ public class event1 extends Fragment {
 
     TextView v2,v1,v3,v5,v4,v7;
     LinearLayout l11;
-    Button b1,b2,c1,ch1,t1;
+    Button b1,b2,c1,ch1,t1,docprof;
     int i;
+
 //    private SharedPreferences mpref;
 //    private static final String PREF_Name="prefsfile";
 //    SharedPreferences.Editor editor;
@@ -60,6 +61,7 @@ public class event1 extends Fragment {
         ch1 = (Button) getView().findViewById(R.id.change11);
         b2 = (Button) getView().findViewById(R.id.b2);
         l11 =(LinearLayout)getView().findViewById(R.id.l1);
+        docprof = (Button) getView().findViewById(R.id.docprof) ;
         //  im=(ImageView)getView().findViewById(R.id.img1);
 
         b1.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +102,7 @@ public class event1 extends Fragment {
                 b1.setVisibility(View.VISIBLE);
                 b2.setVisibility(View.VISIBLE);
                 t1.setVisibility(View.GONE);
+                docprof.setVisibility(View.GONE);
             }
         });
 
@@ -165,7 +168,7 @@ public class event1 extends Fragment {
             b2.setVisibility(View.GONE);
             c1.setVisibility(View.VISIBLE);
             ch1.setVisibility(View.VISIBLE);
-            v4.setText("Venu : Ahmedabad ");
+            v4.setText("Venue : Ahmedabad ");
             l11.setBackgroundColor(Color.parseColor("#ffffff"));
         }
     };
@@ -178,6 +181,7 @@ public class event1 extends Fragment {
         v5.setVisibility(View.GONE);
         v7.setVisibility(View.GONE);
         t1.setVisibility(View.VISIBLE);
+        docprof.setVisibility(View.VISIBLE);
         c1.setVisibility(View.GONE);
         ch1.setVisibility(View.GONE);
         l11.setBackgroundResource(R.drawable.img11);
