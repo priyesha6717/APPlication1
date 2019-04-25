@@ -35,7 +35,7 @@ public class login1 extends AppCompatActivity implements TextWatcher,CompoundBut
     SharedPreferences sp;
     private static final String PREF_Name="prefsfile1";
     SharedPreferences.Editor editor;
-    String URL = "http://192.168.43.184/Android/loginindex1.php";
+    String URL = "http://192.168.43.184/Android/getData1.php";
     JSONParser jsonParser = new JSONParser();
 
     @Override
@@ -139,8 +139,24 @@ public class login1 extends AppCompatActivity implements TextWatcher,CompoundBut
                 if (result != null) {
 
                     Toast.makeText(getApplicationContext(),result.getString("message"),Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(login1.this, profile_doctor.class);
-                    startActivity(intent);
+                    JSONObject userJson = result.getJSONObject("user");
+
+                    User user = new User(
+                            userJson.getString("Firstname"),
+                            userJson.getString("Middlename"),
+                            userJson.getString("Lastname"),
+                            userJson.getString("Birthdate"),
+                            userJson.getString("Gender"),
+                            userJson.getString("EmployeeID"),
+                            userJson.getString("EmailID"),
+                            userJson.getString("ContactNo"),
+                            userJson.getString("Password")
+                    );
+
+
+                    SharedPrefManager.getInstance(getApplicationContext()).userLogin(user);
+                    //starting the profile activity
+                    startActivity(new Intent(getApplicationContext(), profile_doctor.class));
 //                    goToActiviy();
                 }
                 else{

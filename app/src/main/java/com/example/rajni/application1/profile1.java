@@ -29,7 +29,7 @@ import java.util.Map;
 
 public class profile1 extends Fragment {
 
-    TextView name, employee, email, contact, logout,contactus,aboutus;
+    TextView name, employee, email, contact, logout, contactus, aboutus;
 
     @Nullable
     @Override
@@ -46,7 +46,6 @@ public class profile1 extends Fragment {
         }
         logout = (TextView) getView().findViewById(R.id.logout);
 
-
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +54,6 @@ public class profile1 extends Fragment {
                 getActivity().finish();
             }
         });
-
 
         name = (TextView) getView().findViewById(R.id.name);
         email = (TextView) getView().findViewById(R.id.email);
@@ -89,106 +87,8 @@ public class profile1 extends Fragment {
 //        getJSON("http://192.168.43.184/Android/getData.php");
 
     }
-
-//    private void getJSON(final String urlWebService) {
-//        class GetJSON extends AsyncTask<Void, Void, String> {
-//            @Override
-//            protected void onPreExecute() {
-//                super.onPreExecute();
-//            }
-//
-//            @Override
-//            protected void onPostExecute(String s) {
-//                super.onPostExecute(s);
-//                Log.i("keya", "post");
-//                Toast.makeText(getActivity().getApplicationContext(), s, Toast.LENGTH_SHORT).show();
-//
-//                try {
-//
-//                    loadIntoListView(s);
-//                    Log.i("keya", "loadIntoListView after");
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//
-//            @Override
-//            protected String doInBackground(Void... voids) {
-//                try {
-//                    URL url = new URL(urlWebService);
-//                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
-//                    StringBuilder sb = new StringBuilder();
-//                    BufferedReader bufferedReader = new BufferedReader(new
-//                            InputStreamReader(con.getInputStream()));
-//                    String json;
-//                    while ((json = bufferedReader.readLine()) != null) {
-//                        sb.append(json + "\n");
-//                    }
-//                    return sb.toString().trim();
-//                } catch (Exception e) {
-//                    return null;
-//                }
-//            }
-//            protected Map<String,String>getParams()
-//            {
-//                Map<String,String> params = new HashMap<String, String>();
-//
-//                login1.Bean bean = new login1.Bean();
-//                String value = bean.getValue();
-//                Log.i("keyaaa",value);
-//                params.put("EmployeeID",value);
-//
-//                return params;
-//            }
-//        }
-//
-//        GetJSON getJSON = new GetJSON();
-//        getJSON.execute();
-//    }
-//
-//
-//    private void loadIntoListView(String json) throws JSONException {
-//////        JSONArray jsonArray = new JSONArray(json);
-//////        String[] registration = new String[jsonArray.length()];
-//////        String[] registration1 = new String[jsonArray.length()];
-//////        String[] registration2 = new String[jsonArray.length()];
-//////        String[] registration3 = new String[jsonArray.length()];
-//////
-//////        for (int i = 0; i < jsonArray.length(); i++) {
-////            JSONObject obj = new JSONObject();
-//////            registration[i] = obj.getString("Firstname");
-//////            registration1[i] = obj.getString("EmailID");
-//////            registration2[i] = obj.getString("EmployeeID");
-//////            registration3[i] = obj.getString("ContactNo");
-//////            name.setText(registration[i]);
-//////            email.setText(registration1[i]);
-//////            employee.setText(registration2[i]);
-//////            contact.setText(registration3[i]);
-////        name.setText(obj.getString("Firstname"));
-////        email.setText(obj.getString("EmailID"));
-////        employee.setText(obj.getString("EmployeeID"));
-////        contact.setText(obj.getString("ContactNo"));
-//        JSONObject jsonObj = new JSONObject(json);
-//        JSONArray peoples = jsonObj.getJSONArray("result");
-//
-//        for (int i = 0; i < peoples.length(); i++) {
-//            JSONObject c = peoples.getJSONObject(i);
-//
-//
-//            String Firstname = (c.getString("Firstname"));
-//            String EmailID = (c.getString("EmailID"));
-//            String EmployeeID = (c.getString("EmployeeID"));
-//            String ContactNo = (c.getString("ContactNo"));
-//
-//            name.setText(Firstname);
-//            email.setText(EmailID);
-//            employee.setText(EmployeeID);
-//            contact.setText(ContactNo);
-//
-//        }
-//
-//
-//    }
 }
+
+
 
 

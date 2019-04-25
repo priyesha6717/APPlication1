@@ -56,7 +56,8 @@
                 android:paddingTop="5dp"
                 android:text="Ria Patel"
                 android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:id="@+id/name1"/>
 
         </LinearLayout>
 
@@ -88,7 +89,8 @@
                 android:paddingTop="5dp"
                 android:text="riapatel@gmail.com"
                 android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:id="@+id/email1"/>
 
         </LinearLayout>
 
@@ -120,7 +122,8 @@
                 android:paddingTop="5dp"
                 android:text="151130116072"
                 android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:id="@+id/employee1"/>
 
         </LinearLayout>
 
@@ -152,7 +155,8 @@
                 android:paddingTop="5dp"
                 android:text="9104772696"
                 android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:id="@+id/contact1"/>
 
         </LinearLayout>
 
@@ -206,7 +210,7 @@
                 android:src="@drawable/about" />
 
             <TextView
-                android:id="@+id/abus"
+                android:id="@+id/abus1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="10dp"
@@ -220,7 +224,8 @@
                 android:paddingTop="5dp"
                 android:text="About Us"
                 android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                />
 
         </LinearLayout>
 
@@ -240,7 +245,7 @@
                 android:src="@drawable/cantctus" />
 
             <TextView
-                android:id="@+id/contact"
+                android:id="@+id/contactus1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="10dp"

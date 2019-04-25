@@ -157,7 +157,6 @@ public class login extends AppCompatActivity implements TextWatcher,CompoundButt
 
 
                     SharedPrefManager.getInstance(getApplicationContext()).userLogin(user);
-
                     //starting the profile activity
                     startActivity(new Intent(getApplicationContext(), profile_emp.class));
 

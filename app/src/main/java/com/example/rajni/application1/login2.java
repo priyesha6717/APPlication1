@@ -34,7 +34,7 @@ public class login2 extends AppCompatActivity implements TextWatcher,CompoundBut
     private static final String PREF_Name="prefsfile";
     SharedPreferences.Editor editor;
     SharedPreferences sp;
-    String URL = "http://192.168.43.184/Android/loginindex1.php";
+    String URL = "http://192.168.43.184/Android/getData1.php";
 
     JSONParser jsonParser = new JSONParser();
 
@@ -59,9 +59,9 @@ public class login2 extends AppCompatActivity implements TextWatcher,CompoundBut
         Password.addTextChangedListener(this);
         cb.setOnCheckedChangeListener( this);
         sp = getSharedPreferences("login",MODE_PRIVATE);
-        if(sp.getBoolean("logged",false)){
-            goToActiviy();
-        }
+//        if(sp.getBoolean("logged",false)){
+//            goToActiviy();
+//        }
         login = (Button)findViewById(R.id.login2);
         reg = (TextView)findViewById(R.id.reg2);
         fpwd = (TextView)findViewById(R.id.fpwd2);
@@ -93,15 +93,15 @@ public class login2 extends AppCompatActivity implements TextWatcher,CompoundBut
                     attemptLogin.execute(EmployeeID.getText().toString(), Password.getText().toString(), "");
 //                    Intent intent1=new Intent(login1.this,profile_doctor.class);
 //                    startActivity(intent1);
-                    sp.edit().putBoolean("logged",true).apply();
+//                    sp.edit().putBoolean("logged",true).apply();
                 }
             }
         });
     }
-    public void goToActiviy(){
-        Intent i = new Intent(this,profile_safetyofficer.class);
-        startActivity(i);
-    }
+//    public void goToActiviy(){
+//        Intent i = new Intent(this,profile_safetyofficer.class);
+//        startActivity(i);
+//    }
     private class AttemptLogin_2 extends AsyncTask<String, String, JSONObject> {
 
         @Override
@@ -138,7 +138,24 @@ public class login2 extends AppCompatActivity implements TextWatcher,CompoundBut
             try {
                 if (result != null) {
                     Toast.makeText(getApplicationContext(),result.getString("message"),Toast.LENGTH_LONG).show();
-                   goToActiviy();
+                    JSONObject userJson = result.getJSONObject("user");
+
+                    User user = new User(
+                            userJson.getString("Firstname"),
+                            userJson.getString("Middlename"),
+                            userJson.getString("Lastname"),
+                            userJson.getString("Birthdate"),
+                            userJson.getString("Gender"),
+                            userJson.getString("EmployeeID"),
+                            userJson.getString("EmailID"),
+                            userJson.getString("ContactNo"),
+                            userJson.getString("Password")
+                    );
+
+
+                    SharedPrefManager.getInstance(getApplicationContext()).userLogin(user);
+                    //starting the profile activity
+                    startActivity(new Intent(getApplicationContext(), profile_safetyofficer.class));
 
                 }
                 else{
