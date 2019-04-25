@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,7 +38,7 @@ public class registration_doctor extends AppCompatActivity {
     private static final String tag = "dob";
     private EditText Birthdate, Firstname, Middlename, Lastname;
 
-    EditText Gender;
+    Spinner Gender;
     EditText EmployeeID, ContactNo, EmailID, Password, ConfirmPassword;
     Button submit, cancle2;
     RequestQueue requestQueue;
@@ -66,7 +67,7 @@ public class registration_doctor extends AppCompatActivity {
         Firstname = (EditText) findViewById(R.id.Firstname1);
         Middlename = (EditText) findViewById(R.id.Middlename1);
         Lastname = (EditText) findViewById(R.id.Lastname1);
-        Gender = (EditText) findViewById(R.id.Gender1);
+        Gender = (Spinner) findViewById(R.id.Gender1);
         EmployeeID = (EditText) findViewById(R.id.EmployeeID1);
         EmailID = (EditText) findViewById(R.id.EmailID1);
         ContactNo = (EditText) findViewById(R.id.ContactNo1);
@@ -119,7 +120,7 @@ public class registration_doctor extends AppCompatActivity {
                 Middlename.setText("");
                 Lastname.setText("");
                 Birthdate.setText("");
-                Gender.setText("");
+
             }
         });
 
@@ -188,7 +189,7 @@ public class registration_doctor extends AppCompatActivity {
           Middlename1 = Middlename.getText().toString().trim();
           Lastname1 = Lastname.getText().toString().trim();
           Birtdate1 = Birthdate.getText().toString().trim();
-          Gender1 = Gender.getText().toString().trim();
+          Gender1 = Gender.getSelectedItem().toString().trim();
           EmployeeID1 = EmployeeID.getText().toString().trim();
           EmailID1 = EmailID.getText().toString().trim();
           ContactNo1 = ContactNo.getText().toString().trim();
@@ -199,71 +200,7 @@ public class registration_doctor extends AppCompatActivity {
 
 
 
-//    private class AttemptLogin1 extends AsyncTask<String, String, JSONObject> {
-//
-//        @Override
-//
-//        protected void onPreExecute() {
-//
-//            super.onPreExecute();
-//
-//        }
-//
-//        @Override
-//
-//        protected JSONObject doInBackground(String... args) {
-//
-//            String Firstname = args[0];
-//            String Middlename = args[1];
-//            String Lastname = args[2];
-//            String Birtdate = args[3];
-//            String Gender = args[4];
-//            String EmployeeID = args[5];
-//            String EmailID = args[6];
-//            String ContactNo = args[7];
-//            String Password = args[8];
-//            ArrayList params = new ArrayList();
-//            params.add(new BasicNameValuePair("Firstname", Firstname));
-//            params.add(new BasicNameValuePair("Middlename", Middlename));
-//            params.add(new BasicNameValuePair("Lastname", Lastname));
-//            params.add(new BasicNameValuePair("Birtdate", Birtdate));
-//            params.add(new BasicNameValuePair("Gender", Gender));
-//            params.add(new BasicNameValuePair("EmployeeID", EmployeeID));
-//            params.add(new BasicNameValuePair("EmailID", EmailID));
-//            params.add(new BasicNameValuePair("ContactNo", ContactNo));
-//            params.add(new BasicNameValuePair("Password", Password));
-//
-//
-//            JSONObject json = jsonParser.makeHttpRequest(URL, "POST", params);
-//
-//
-//            return json;
-//
-//        }
-//
-//        protected void onPostExecute(JSONObject result) {
-//
-//            // dismiss the dialog once product deleted
-//            //Toast.makeText(getApplicationContext(),result,Toast.LENGTH_LONG).show();
-//
-//            try {
-//                if (result != null) {
-//                    if (result.getString("message").equals("Successfully registered the user")) {
-//                        Intent intent = new Intent(registration_doctor.this, profile_doctor.class);
-//                        startActivity(intent);
-//                        finish();
-//                    } else {
-//                        Toast.makeText(getApplicationContext(), "Invalid credentials", Toast.LENGTH_LONG).show();
-//                    }
-//                } else {
-//                    Toast.makeText(getApplicationContext(), "Unable to retrieve any data from server", Toast.LENGTH_LONG).show();
-//                }
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//
-//
-//        }
+
 
 
 

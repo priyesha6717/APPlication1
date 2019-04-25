@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,7 +36,7 @@ public class registration_employee extends AppCompatActivity {
     private static final String tag = "dob";
     private EditText Birthdate, Firstname, Middlename, Lastname;
     EditText EmployeeID, ContactNo, EmailID, Password, ConfirmPassword;
-    EditText Gender;
+    Spinner Gender;
     Button submit, cancle2;
     String emailpattern = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
     String pwdpattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{6,20}$";
@@ -46,7 +47,7 @@ public class registration_employee extends AppCompatActivity {
     String Birtdate1;
     String Gender1;
     String EmployeeID1;
-    String EmailID1 ;
+    String EmailID1;
     String ContactNo1;
     String Password1;
     RequestQueue requestQueue;
@@ -64,7 +65,7 @@ public class registration_employee extends AppCompatActivity {
         Firstname = (EditText) findViewById(R.id.Firstname);
         Middlename = (EditText) findViewById(R.id.Middlename);
         Lastname = (EditText) findViewById(R.id.Lastname);
-        Gender = (EditText) findViewById(R.id.Gender);
+        Gender = (Spinner) findViewById(R.id.Gender);
         EmployeeID = (EditText) findViewById(R.id.EmployeeID);
         EmailID = (EditText) findViewById(R.id.EmailID);
         ContactNo = (EditText) findViewById(R.id.ContactNo);
@@ -115,7 +116,7 @@ public class registration_employee extends AppCompatActivity {
                 Middlename.setText("");
                 Lastname.setText("");
                 Birthdate.setText("");
-                Gender.setText("");
+
             }
         });
 
@@ -185,7 +186,7 @@ public class registration_employee extends AppCompatActivity {
         Middlename1 = Middlename.getText().toString().trim();
         Lastname1 = Lastname.getText().toString().trim();
         Birtdate1 = Birthdate.getText().toString().trim();
-        Gender1 = Gender.getText().toString().trim();
+        Gender1 = Gender.getSelectedItem().toString().trim();
         EmployeeID1 = EmployeeID.getText().toString().trim();
         EmailID1 = EmailID.getText().toString().trim();
         ContactNo1 = ContactNo.getText().toString().trim();

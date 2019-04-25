@@ -53,7 +53,8 @@
                 android:paddingTop="5dp"
                 android:text="Priyesha Patel"
                 android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:id="@+id/name"/>
 
         </LinearLayout>
 
@@ -85,7 +86,8 @@
                 android:paddingTop="5dp"
                 android:text="ppatel@gmail.com"
                 android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:id="@+id/email"/>
 
         </LinearLayout>
 
@@ -117,7 +119,8 @@
                 android:paddingTop="5dp"
                 android:text="151130116072"
                 android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:id="@+id/employee"/>
 
         </LinearLayout>
 
@@ -148,6 +151,7 @@
                 android:paddingStart="20dp"
                 android:paddingTop="5dp"
                 android:text="9104772696"
+                android:id="@+id/phone"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 

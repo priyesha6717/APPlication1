@@ -77,7 +77,7 @@
             android:paddingTop="12dp"
             android:textSize="17dp" />
 
-        <EditText
+        <Spinner
             android:id="@+id/Gender2"
             android:layout_width="149dp"
             android:layout_height="46dp"

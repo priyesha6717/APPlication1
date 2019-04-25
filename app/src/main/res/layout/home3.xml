@@ -1,14 +1,324 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="800dp"
+       >
 
-    android:id="@+id/r5">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hello"
-        android:textSize="100dp"/>
-</RelativeLayout>
+
+        <EditText
+            android:id="@+id/safetyemployee"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"
+            android:hint="Enter EmployeeID"
+            android:textSize="17dp"
+             />
+
+        <EditText
+            android:id="@+id/weight"
+            android:layout_width="190dp"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/safetyemployee"
+            android:ems="10"
+            android:hint="Weight"
+            android:inputType="textPersonName"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp" />
+
+        <EditText
+            android:id="@+id/height"
+            android:layout_width="194dp"
+            android:layout_height="46dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/safetyemployee"
+            android:ems="10"
+            android:hint="Height"
+            android:inputType="textPersonName"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/hemo"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/weight"
+            android:ems="10"
+            android:text="Hemoglobin"
+            android:inputType="date"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"
+            android:textSize="17dp" />
+
+        <Spinner
+            android:id="@+id/hemo1"
+            android:layout_width="190dp"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/hemo"
+            android:ems="10"
+            android:entries="@array/Normal"
+            android:inputType="textPersonName"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"
+            android:textSize="17dp" />
+
+        <EditText
+            android:id="@+id/hemo2"
+            android:layout_width="196dp"
+            android:layout_height="46dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/hemo"
+            android:hint="Value"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/heart"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/hemo1"
+            android:ems="10"
+           android:text="Heartbits"
+            android:inputType="textEmailAddress"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"
+            android:textSize="17dp" />
+
+        <Spinner
+            android:id="@+id/heart1"
+            android:layout_width="188dp"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/heart"
+            android:ems="10"
+            android:entries="@array/Normal"
+            android:hint="Contact No"
+            android:inputType="phone"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"
+            android:textSize="17dp" />
+
+        <EditText
+            android:id="@+id/heart2"
+            android:layout_width="194dp"
+            android:layout_height="46dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/heart"
+            android:ems="10"
+            android:hint="value"
+            android:inputType="textVisiblePassword"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/choles"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/heart1"
+            android:ems="10"
+            android:text="Cholesterol"
+            android:inputType="textVisiblePassword"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"
+            android:textSize="17dp" />
+
+
+        <Spinner
+            android:id="@+id/choles1"
+            android:layout_width="183dp"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/choles"
+            android:entries="@array/Normal"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"
+            android:textColor="@color/colorAccent" />
+
+        <EditText
+            android:id="@+id/choles2"
+            android:layout_width="201dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/choles"
+            android:ems="10"
+            android:hint="Value"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/choles1"
+            android:layout_marginStart="0dp"
+            android:text="Sugar Level"
+            android:textSize="17dp"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"/>
+
+        <Spinner
+            android:id="@+id/suger1"
+            android:layout_width="182dp"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView15"
+            android:entries="@array/Normal"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp" />
+
+        <EditText
+            android:id="@+id/suger2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/textView15"
+            android:ems="10"
+            android:hint="Value"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/suger1"
+            android:text="BP Up"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"/>
+
+        <EditText
+            android:id="@+id/bpup2"
+            android:layout_width="200dp"
+            android:layout_height="46dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/textView16"
+            android:ems="10"
+            android:hint="Value"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/bpup1"
+            android:layout_marginTop="-2dp"
+            android:text="BP Down"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"/>
+
+        <EditText
+            android:id="@+id/bpdown2"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/textView17"
+            android:layout_toStartOf="@+id/bpdown1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Value" />
+
+        <Spinner
+            android:id="@+id/bpup1"
+            android:layout_width="182dp"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView16"
+            android:entries="@array/Normal"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"/>
+
+        <Spinner
+            android:id="@+id/bpdown1"
+            android:layout_width="182dp"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView17"
+            android:entries="@array/Normal"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"/>
+        />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/bpdown1"
+            android:entries="@array/blood"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"
+            android:id="@+id/blood"></Spinner>
+
+        <Button
+            android:id="@+id/updaterecord"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/blood"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"
+            android:text="Update Employee Record"
+            android:textAlignment="center" />
+
+
+
+    </RelativeLayout>
+
+
+</ScrollView>

@@ -22,6 +22,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 
 public class login1 extends AppCompatActivity implements TextWatcher,CompoundButton.OnCheckedChangeListener {
@@ -31,13 +32,11 @@ public class login1 extends AppCompatActivity implements TextWatcher,CompoundBut
     Spanned text1;
     CheckBox cb1;
     private SharedPreferences mpref1;
+    SharedPreferences sp;
     private static final String PREF_Name="prefsfile1";
     SharedPreferences.Editor editor;
     String URL = "http://192.168.43.184/Android/loginindex1.php";
-
     JSONParser jsonParser = new JSONParser();
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +60,12 @@ public class login1 extends AppCompatActivity implements TextWatcher,CompoundBut
         login1 = (Button)findViewById(R.id.login1);
         reg1 = (TextView)findViewById(R.id.reg1);
         fpwd1 = (TextView)findViewById(R.id.fpwd1);
-
+        sp = getSharedPreferences("login",MODE_PRIVATE);
+//        if(sp.getBoolean("logged",false)){
+//            goToActiviy();
+//        }
+        Bean bean = new Bean();
+        bean.setValue("EmployeeID");
 
         text1= Html.fromHtml("<a href='https://www.google.co.in//'>Forget your password?</a>");
         fpwd1.setMovementMethod(LinkMovementMethod.getInstance());
@@ -76,6 +80,8 @@ public class login1 extends AppCompatActivity implements TextWatcher,CompoundBut
         login1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 if(EmployeeID.getText().toString().trim().length()==0){
                     EmployeeID.setError("Enter your userID");
                     EmployeeID.requestFocus();
@@ -87,12 +93,15 @@ public class login1 extends AppCompatActivity implements TextWatcher,CompoundBut
                 else{
                     AttemptLogin_1 attemptLogin = new AttemptLogin_1();
                     attemptLogin.execute(EmployeeID.getText().toString(), Password.getText().toString(), "");
-//                    Intent intent1=new Intent(login1.this,profile_doctor.class);
-//                    startActivity(intent1);
+//                    sp.edit().putBoolean("logged",true).apply();
                 }
             }
         });
     }
+//    public void goToActiviy(){
+//        Intent i = new Intent(this,profile_doctor.class);
+//        startActivity(i);
+//    }
     private class AttemptLogin_1 extends AsyncTask<String, String, JSONObject> {
 
         @Override
@@ -132,6 +141,7 @@ public class login1 extends AppCompatActivity implements TextWatcher,CompoundBut
                     Toast.makeText(getApplicationContext(),result.getString("message"),Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(login1.this, profile_doctor.class);
                     startActivity(intent);
+//                    goToActiviy();
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Unable to retrieve any data from server", Toast.LENGTH_LONG).show();
@@ -181,4 +191,17 @@ public class login1 extends AppCompatActivity implements TextWatcher,CompoundBut
 
         }
     }
+
+    public static class Bean{
+        public static   String value;
+        public String getValue(){
+            return value;
+        }
+        public void setValue(String value){
+            Bean.value = value;
+        }
+
+    }
+
+
 }

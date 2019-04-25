@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class login extends AppCompatActivity implements TextWatcher,CompoundButton.OnCheckedChangeListener {
     EditText EmployeeID, Password;
@@ -31,10 +33,11 @@ public class login extends AppCompatActivity implements TextWatcher,CompoundButt
     Spanned text;
     CheckBox cb;
     private SharedPreferences mpref;
+    SharedPreferences sp;
     private static final String PREF_Name = "prefsfile";
     SharedPreferences.Editor editor;
 
-    String URL = "http://192.168.43.184/Android/loginindex1.php";
+    String URL = "http://192.168.43.184/Android/getData1.php";
 
     JSONParser jsonParser = new JSONParser();
 
@@ -56,7 +59,10 @@ public class login extends AppCompatActivity implements TextWatcher,CompoundButt
         EmployeeID.addTextChangedListener(this);
         Password.addTextChangedListener(this);
         cb.setOnCheckedChangeListener(this);
-
+        sp = getSharedPreferences("login",MODE_PRIVATE);
+//        if(sp.getBoolean("logged",false)){
+//            goToActiviy();
+//        }
         login = (Button) findViewById(R.id.login);
         reg = (TextView) findViewById(R.id.register);
         fpwd = (TextView) findViewById(R.id.fpwd);
@@ -87,12 +93,19 @@ public class login extends AppCompatActivity implements TextWatcher,CompoundButt
                 } else {
                     AttemptLogin attemptLogin = new AttemptLogin();
                     attemptLogin.execute(EmployeeID.getText().toString(), Password.getText().toString(), "");
+
 //                    userLogin();
+//                    sp.edit().putBoolean("logged",true).apply();
 
                 }
             }
         });
     }
+
+//    public void goToActiviy(){
+//        Intent i = new Intent(this,profile_emp.class);
+//        startActivity(i);
+//    }
         private class AttemptLogin extends AsyncTask<String, String, JSONObject> {
 
         @Override
@@ -115,22 +128,38 @@ public class login extends AppCompatActivity implements TextWatcher,CompoundButt
             params.add(new BasicNameValuePair("Password", Password));
 
             JSONObject json = jsonParser.makeHttpRequest(URL, "POST", params);
-
-
             return json;
 
         }
 
-        protected void onPostExecute(JSONObject result) {
+        protected void onPostExecute(JSONObject obj) {
 
             // dismiss the dialog once product deleted
             //Toast.makeText(getApplicationContext(),result,Toast.LENGTH_LONG).show();
 
             try {
-                if (result != null) {
-                    Toast.makeText(getApplicationContext(),result.getString("message"),Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(login.this, profile_emp.class);
-                    startActivity(intent);
+
+                if (obj != null) {
+                    Toast.makeText(getApplicationContext(),obj.getString("message"),Toast.LENGTH_LONG).show();
+                    JSONObject userJson = obj.getJSONObject("user");
+
+                    User user = new User(
+                            userJson.getString("Firstname"),
+                            userJson.getString("Middlename"),
+                            userJson.getString("Lastname"),
+                            userJson.getString("Birthdate"),
+                            userJson.getString("Gender"),
+                            userJson.getString("EmployeeID"),
+                            userJson.getString("EmailID"),
+                            userJson.getString("ContactNo"),
+                            userJson.getString("Password")
+                    );
+
+
+                    SharedPrefManager.getInstance(getApplicationContext()).userLogin(user);
+
+                    //starting the profile activity
+                    startActivity(new Intent(getApplicationContext(), profile_emp.class));
 
 
                 }

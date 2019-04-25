@@ -23,8 +23,5 @@ public class MainActivity extends AppCompatActivity {
 
           },Splash_time_out);
 
-
     }
-
-
 }

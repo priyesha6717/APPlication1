@@ -31,6 +31,7 @@ public class login3 extends AppCompatActivity implements TextWatcher,CompoundBut
     Spanned text;
     CheckBox cb;
     private SharedPreferences mpref;
+    SharedPreferences sp;
     private static final String PREF_Name="prefsfile";
     SharedPreferences.Editor editor;
     String URL = "http://192.168.43.184/Android/loginindex1.php";
@@ -56,7 +57,10 @@ public class login3 extends AppCompatActivity implements TextWatcher,CompoundBut
         EmployeeID.addTextChangedListener( this);
         Password.addTextChangedListener(this);
         cb.setOnCheckedChangeListener( this);
-
+        sp = getSharedPreferences("login",MODE_PRIVATE);
+        if(sp.getBoolean("logged",false)){
+            goToActiviy();
+        }
         login = (Button)findViewById(R.id.login3);
         reg = (TextView)findViewById(R.id.reg3);
         fpwd = (TextView)findViewById(R.id.fpwd3);
@@ -88,9 +92,14 @@ public class login3 extends AppCompatActivity implements TextWatcher,CompoundBut
                     attemptLogin.execute(EmployeeID.getText().toString(), Password.getText().toString(), "");
 //                    Intent intent1=new Intent(login1.this,profile_doctor.class);
 //                    startActivity(intent1);
+                    sp.edit().putBoolean("logged",true).apply();
                 }
             }
         });
+    }
+    public void goToActiviy(){
+        Intent i = new Intent(this,profile_doctor.class);
+        startActivity(i);
     }
     private class AttemptLogin_3 extends AsyncTask<String, String, JSONObject> {
 
@@ -128,8 +137,7 @@ public class login3 extends AppCompatActivity implements TextWatcher,CompoundBut
             try {
                 if (result != null) {
                     Toast.makeText(getApplicationContext(),result.getString("message"),Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(login3.this, profile_admin1.class);
-                    startActivity(intent);
+                    goToActiviy();
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Unable to retrieve any data from server", Toast.LENGTH_LONG).show();

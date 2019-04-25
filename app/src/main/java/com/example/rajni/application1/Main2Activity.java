@@ -29,7 +29,7 @@ import android.widget.Toast;
 public class Main2Activity extends Activity {
     String[] names = {"Employee","Doctor","Safety Officer","Admin"};
     ArrayAdapter<String> adapter;
-    TextView location,AboutUs;
+    TextView location,AboutUs,contactus;
 
 
 
@@ -84,6 +84,22 @@ public class Main2Activity extends Activity {
                 dialog.cancel();
             }
         });
+        contactus = (TextView)findViewById(R.id.contactus);
+        contactus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Main2Activity.this, activity_contactus.class);
+                startActivity(intent);
 
+            }
+        });
+        AboutUs = (TextView)findViewById(R.id.aboutus);
+        AboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Main2Activity.this, AboutUs.class);
+                startActivity(intent);
+            }
+        });
     }
 }

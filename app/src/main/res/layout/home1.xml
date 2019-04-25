@@ -282,7 +282,7 @@
                         android:layout_weight="0.50"
                         android:paddingTop="5dp"
                         android:paddingBottom="1dp"
-                        android:text="Hearbits"
+                        android:text="Heartbits"
                         android:textAlignment="center"
                         android:textColor="@android:color/background_dark"
                         android:textSize="18sp" />
@@ -361,7 +361,7 @@
                         android:layout_weight="0.50"
                         android:paddingTop="5dp"
                         android:paddingBottom="1dp"
-                        android:text="Cholestrol"
+                        android:text="Cholesterol"
                         android:textAlignment="center"
                         android:textColor="@android:color/background_dark"
                         android:textSize="18sp" />

@@ -22,19 +22,19 @@ public class profile_doctor extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.home :
                         setTitle("Home");
-                        SF = new home3();
+                        SF = new home2();
                         break;
                     case R.id.event :
                         setTitle("Event");
-                        SF = new event3();
+                        SF = new event2();
                         break;
                     case R.id.appointment :
                         setTitle("Appointment");
-                        SF = new appointment3();
+                        SF = new appointment2();
                         break;
                     case R.id.profile :
                         setTitle("Profile");
-                        SF = new profile3();
+                        SF = new profile2();
                         break;
                 }
 

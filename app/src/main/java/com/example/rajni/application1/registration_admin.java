@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,7 +36,7 @@ public class registration_admin extends AppCompatActivity {
     TextView lg;
     private static final String tag = "dob";
     private EditText Birthdate, Firstname, Middlename, Lastname;
-    EditText Gender;
+    Spinner Gender;
     EditText EmployeeID, ContactNo, EmailID, Password, ConfirmPassword;
     Button submit, cancle2;
     String emailpattern = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
@@ -64,7 +65,7 @@ public class registration_admin extends AppCompatActivity {
         Firstname = (EditText) findViewById(R.id.Firstname3);
         Middlename = (EditText) findViewById(R.id.Middlename3);
         Lastname = (EditText) findViewById(R.id.Lastname3);
-        Gender = (EditText) findViewById(R.id.Gender3);
+        Gender = (Spinner) findViewById(R.id.Gender3);
         EmployeeID = (EditText) findViewById(R.id.EmployeeID3);
         EmailID = (EditText) findViewById(R.id.EmailID3);
         ContactNo = (EditText) findViewById(R.id.ContactNo3);
@@ -115,7 +116,7 @@ public class registration_admin extends AppCompatActivity {
                 Middlename.setText("");
                 Lastname.setText("");
                 Birthdate.setText("");
-                Gender.setText("");
+
             }
         });
         findViewById(R.id.sub3).setOnClickListener(new View.OnClickListener() {
@@ -183,7 +184,7 @@ public class registration_admin extends AppCompatActivity {
         Middlename1 = Middlename.getText().toString().trim();
         Lastname1 = Lastname.getText().toString().trim();
         Birtdate1 = Birthdate.getText().toString().trim();
-        Gender1 = Gender.getText().toString().trim();
+        Gender1 = Gender.getSelectedItem().toString().trim();
         EmployeeID1 = EmployeeID.getText().toString().trim();
         EmailID1 = EmailID.getText().toString().trim();
         ContactNo1 = ContactNo.getText().toString().trim();
