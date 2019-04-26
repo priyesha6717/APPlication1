@@ -94,6 +94,8 @@ public class login3 extends AppCompatActivity implements TextWatcher,CompoundBut
 //                    startActivity(intent1);
 //                    sp.edit().putBoolean("logged",true).apply();
                 }
+                Intent intent1=new Intent(login3.this,profile_admin1.class);
+                startActivity(intent1);
             }
         });
     }
