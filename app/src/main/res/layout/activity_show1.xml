@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/abc1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Profile"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_goneMarginTop="70dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="38dp"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="619dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="6dp"
+                android:src="@drawable/empid" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/t11"
+                android:fontFamily="sans-serif-light"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:text="Priyesha Patel"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:id="@+id/name"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="6dp"
+                android:src="@drawable/email1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/t11"
+                android:fontFamily="sans-serif-light"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:text="ppatel@gmail.com"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:id="@+id/email"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="6dp"
+                android:src="@drawable/emoid1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/t11"
+                android:fontFamily="sans-serif-light"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:text="151130116072"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:id="@+id/employee"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="6dp"
+                android:src="@drawable/phone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/t11"
+                android:fontFamily="sans-serif-light"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:text="9104772696"
+                android:id="@+id/phone"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="6dp"
+                android:src="@drawable/time" />
+
+            <TextView
+                android:id="@+id/set"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/t11"
+                android:fontFamily="sans-serif-light"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:text="2015"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="6dp"
+                android:src="@drawable/perfo" />
+
+            <TextView
+                android:id="@+id/abus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/t11"
+                android:fontFamily="sans-serif-light"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:text="Good"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

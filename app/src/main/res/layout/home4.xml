@@ -1,14 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/main1">
 
-    android:id="@+id/r5">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hello"
-        android:textSize="100dp"/>
-</RelativeLayout>
+    <android.support.design.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="225dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:elevation="15dp"
+        app:cardCornerRadius="8dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/emp11"
+            android:paddingEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="35dp"
+            android:drawableEnd="@drawable/ic_search_black_24dp"
+            android:text="Employee"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
+            android:background="@drawable/t12"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/lemp1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:weightSum="4">
+
+            <EditText
+                android:id="@+id/e1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:hint="Enter EmployeeID"
+                android:layout_weight="3"
+                android:visibility="gone"
+                android:textAlignment="center"/>
+
+            <Button
+                android:id="@+id/bb1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Go"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+    </android.support.design.card.MaterialCardView>
+
+    <android.support.design.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:elevation="15dp"
+        app:cardCornerRadius="8dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/emp22"
+            android:paddingEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="35dp"
+            android:drawableEnd="@drawable/ic_search_black_24dp"
+            android:text="Doctor"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
+            android:background="@drawable/t12"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/lemp2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp"
+            android:weightSum="4">
+
+            <EditText
+                android:id="@+id/e2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:hint="Enter EmployeeID"
+                android:layout_weight="3"
+                android:textAlignment="center"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/bb2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Go"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+    </android.support.design.card.MaterialCardView>
+
+    <android.support.design.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:elevation="15dp"
+        app:cardCornerRadius="8dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/emp33"
+            android:paddingEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="35dp"
+            android:drawableEnd="@drawable/ic_search_black_24dp"
+            android:text="Safety Officer"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
+            android:background="@drawable/t12"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/lemp3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:weightSum="4">
+
+            <EditText
+                android:id="@+id/e3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:hint="Enter EmployeeID"
+                android:layout_weight="3"
+                android:textAlignment="center"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/bb3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Go"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+    </android.support.design.card.MaterialCardView>
+
+</LinearLayout>
