@@ -7,14 +7,11 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +21,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class home4 extends Fragment {
+public class home44 extends Fragment {
 
     TextView t11,t22,t33;
     Button b1,b2,b3;
@@ -91,7 +88,7 @@ public class home4 extends Fragment {
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
             {
-                home4.AttemptLogin1 attemptLogin = new home4.AttemptLogin1();
+                home44.AttemptLogin1 attemptLogin = new home44.AttemptLogin1();
                 attemptLogin.execute(EmployeeID, "");
 
                 Intent i = new Intent(getActivity(),show11.class);
