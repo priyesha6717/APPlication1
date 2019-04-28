@@ -36,7 +36,7 @@ public class home44 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.home4,container,false);
+        return inflater.inflate(R.layout.home44,container,false);
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class home44 extends Fragment {
         b2 = (Button)getView().findViewById(R.id.bb2);
         b3 = (Button)getView().findViewById(R.id.bb3);
 
-        EmployeeID = e11.getText().toString().trim();
+        EmployeeID = e11.getText().toString();
         //Password = "12345";
 
         t11.setOnClickListener(new View.OnClickListener() {
@@ -148,7 +148,7 @@ public class home44 extends Fragment {
 
                     SharedPrefManager.getInstance(getActivity()).userLogin(user);
                     //starting the profile activity
-                    startActivity(new Intent(getActivity(), profile_emp.class));
+                    //startActivity(new Intent(getActivity(), profile_emp.class));
 
                 }
                 else{
